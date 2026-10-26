@@ -579,6 +579,9 @@ export default function Navbar({
           <NavLink to="/contact" style={navLinkStyle} onClick={closeMobileMenu}>
             Contact Us
           </NavLink>
+          <NavLink to="/contact" style={navLinkStyle} onClick={closeMobileMenu}>
+            DevOps
+          </NavLink>
         </nav>
       </div>
 
