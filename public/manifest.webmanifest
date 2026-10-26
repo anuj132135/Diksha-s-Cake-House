@@ -1,0 +1,20 @@
+{
+  "name": "Diksha's Cake House",
+  "short_name": "Diksha's Cakes",
+  "start_url": "/",
+  "id": "/",
+  "display": "standalone",
+  "background_color": "#FAF5EE",
+  "theme_color": "#4A2018",
+  "orientation": "portrait-primary",
+  "description": "Diksha's Cake House — Freshly Baked ♥ Made with Love. Order handcrafted artisanal cakes & custom 3D bakes.",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["food", "shopping", "lifestyle"]
+}

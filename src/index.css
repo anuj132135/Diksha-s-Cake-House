@@ -1,0 +1,584 @@
+:root {
+  /* Brand Theme: Diksha's Cake House Palette (Dark Chocolate, Dusty Rose & Vanilla Cream) */
+  --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-script: 'Dancing Script', cursive;
+
+  /* Logo Palette: Dark Chocolate Brown */
+  --color-chocolate: #462017;
+  --color-chocolate-dark: #33150F;
+  --color-chocolate-light: #5A2B20;
+  --color-chocolate-subtle: #F3EBE3;
+
+  /* Logo Palette: Dusty Rose & Coral Pink */
+  --color-rose: #E57385;
+  --color-rose-hover: #D45B6F;
+  --color-rose-light: #FDF0F2;
+  --color-rose-glow: rgba(229, 115, 133, 0.28);
+
+  /* Mapping for theme tokens */
+  --color-primary: #462017;
+  --color-primary-hover: #33150F;
+  --color-primary-light: #FDF0F2;
+  --color-primary-glow: rgba(70, 32, 23, 0.22);
+
+  --color-secondary: #E57385;
+  --color-secondary-light: #FDF0F2;
+  --color-gold: #C9933E;
+
+  /* Backgrounds: Warm Vanilla Cream */
+  --color-bg: #FAF5EE;
+  --color-surface: #FFFFFF;
+  --color-surface-card: #FFFFFF;
+  --color-surface-subtle: #F5ECE0;
+
+  /* Typography Colors */
+  --color-text-main: #361912;
+  --color-text-muted: #6E534C;
+  --color-text-light: #9E837C;
+
+  /* Borders */
+  --color-border: #E8D8CA;
+  --color-border-hover: #D8C3B0;
+  --color-border-rose: #F6D6DC;
+
+  /* Veg Badge */
+  --color-veg: #16A34A;
+  --color-veg-bg: #DCFCE7;
+
+  --color-star: #F59E0B;
+
+  --shadow-sm: 0 2px 6px rgba(54, 25, 18, 0.05);
+  --shadow-md: 0 8px 24px rgba(54, 25, 18, 0.08);
+  --shadow-lg: 0 16px 40px rgba(54, 25, 18, 0.13);
+  --shadow-primary: 0 8px 25px rgba(70, 32, 23, 0.28);
+  --shadow-rose: 0 8px 25px rgba(229, 115, 133, 0.32);
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-full: 9999px;
+
+  --transition-fast: 160ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-normal: 260ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-theme='dark'] {
+  --color-chocolate: #FFB3BE;
+  --color-chocolate-dark: #FFA0AC;
+  --color-chocolate-light: #2E1510;
+  --color-chocolate-subtle: #311813;
+
+  --color-rose: #FF7B8E;
+  --color-rose-hover: #FF8E9F;
+  --color-rose-light: #3A1B17;
+  --color-rose-glow: rgba(255, 123, 142, 0.3);
+
+  --color-primary: #FF7B8E;
+  --color-primary-hover: #FF8E9F;
+  --color-primary-light: #351713;
+  --color-primary-glow: rgba(255, 123, 142, 0.3);
+
+  --color-secondary: #E5A158;
+  --color-secondary-light: #2E1D13;
+
+  --color-bg: #1B0D0A;
+  --color-surface: #261410;
+  --color-surface-card: #2B1713;
+  --color-surface-subtle: #331C17;
+
+  --color-text-main: #FCF5F0;
+  --color-text-muted: #C2A7A0;
+  --color-text-light: #8E746E;
+
+  --color-border: #422620;
+  --color-border-hover: #56332B;
+  --color-border-rose: #592B2F;
+
+  --color-veg-bg: #12311C;
+
+  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.65);
+  --shadow-primary: 0 8px 30px rgba(255, 123, 142, 0.25);
+  --shadow-rose: 0 8px 30px rgba(255, 123, 142, 0.3);
+}
+
+/* Modern reset with logical properties & sizing */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+html {
+  font-family: var(--font-sans);
+  scroll-behavior: smooth;
+  text-size-adjust: 100%;
+  scrollbar-gutter: stable;
+  background-color: var(--color-bg);
+  color: var(--color-text-main);
+  overscroll-behavior-y: contain;
+}
+
+body {
+  min-block-size: 100dvh;
+  inline-size: 100%;
+  overflow-x: hidden;
+  line-height: 1.55;
+  background-color: var(--color-bg);
+  color: var(--color-text-main);
+  transition: background-color var(--transition-normal), color var(--transition-normal);
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* Script brand styling */
+.brand-script {
+  font-family: var(--font-script);
+  font-weight: 700;
+}
+
+/* Prevent unwanted text selection on app controls */
+header, nav, button, .card, .pill-badge, .veg-tag, .mobile-bottom-nav, .floating-cart-bar {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Typography Helpers */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  color: var(--color-text-main);
+  line-height: 1.25;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  touch-action: manipulation;
+  transition: transform var(--transition-fast), filter var(--transition-fast);
+}
+
+button:active {
+  transform: scale(0.96);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img, svg {
+  display: block;
+  max-inline-size: 100%;
+  block-size: auto;
+}
+
+/* Global utility container */
+.container {
+  inline-size: 100%;
+  max-inline-size: 1240px;
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 3.5vw, 2.5rem);
+}
+
+/* Veg / Dietary Badges */
+.veg-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding-inline: 8px;
+  padding-block: 3px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-veg-bg);
+  color: var(--color-veg);
+  border: 1px solid rgba(22, 163, 74, 0.3);
+  white-space: nowrap;
+}
+
+.veg-symbol {
+  inline-size: 13px;
+  block-size: 13px;
+  border: 1.5px solid var(--color-veg);
+  border-radius: 3px;
+  display: grid;
+  place-content: center;
+  background-color: transparent;
+  flex-shrink: 0;
+}
+.veg-symbol::after {
+  content: '';
+  inline-size: 6px;
+  block-size: 6px;
+  border-radius: 50%;
+  background-color: var(--color-veg);
+}
+
+/* Pill Badges */
+.pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding-inline: 10px;
+  padding-block: 4px;
+  border-radius: var(--radius-full);
+  background: var(--color-primary-light);
+  color: var(--color-chocolate);
+}
+
+/* Primary Button (Rich Chocolate with Rose Accent glow) */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding-inline: 20px;
+  padding-block: 12px;
+  min-height: 44px;
+  background: linear-gradient(135deg, #462017, #5E2B20);
+  color: #FFFFFF;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: var(--radius-full);
+  box-shadow: 0 4px 16px rgba(70, 32, 23, 0.28);
+  border: 1px solid rgba(229, 115, 133, 0.3);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), filter var(--transition-fast);
+  white-space: nowrap;
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+  box-shadow: 0 8px 24px rgba(70, 32, 23, 0.4);
+}
+.btn-primary:active {
+  transform: scale(0.96) !important;
+}
+
+/* Rose Action Button (for celebration CTAs) */
+.btn-rose {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding-inline: 20px;
+  padding-block: 12px;
+  min-height: 44px;
+  background: linear-gradient(135deg, #E57385, #D45B6F);
+  color: #FFFFFF;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-rose);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), filter var(--transition-fast);
+  white-space: nowrap;
+}
+.btn-rose:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+  box-shadow: 0 10px 28px rgba(229, 115, 133, 0.45);
+}
+.btn-rose:active {
+  transform: scale(0.96) !important;
+}
+
+/* Secondary Button */
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding-inline: 18px;
+  padding-block: 10px;
+  min-height: 44px;
+  background-color: var(--color-surface);
+  color: var(--color-text-main);
+  font-weight: 600;
+  font-size: 0.92rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-sm);
+  transition: background-color var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
+  white-space: nowrap;
+}
+.btn-secondary:hover {
+  background-color: var(--color-surface-subtle);
+  border-color: var(--color-border-hover);
+  transform: translateY(-1px);
+}
+.btn-secondary:active {
+  transform: scale(0.96) !important;
+}
+
+/* Modern <dialog> Styling — Desktop Dialog & Mobile Bottom Sheet */
+dialog[closedby] {
+  border: none;
+  border-radius: var(--radius-xl);
+  background-color: var(--color-surface);
+  color: var(--color-text-main);
+  box-shadow: var(--shadow-lg);
+  margin: auto;
+  max-inline-size: min(94dvw, 680px);
+  max-block-size: 90dvh;
+  overflow-y: auto;
+  scrollbar-gutter: stable;
+  overscroll-behavior: contain;
+  padding: 0;
+  animation: dialogFadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+dialog::backdrop {
+  background-color: rgba(35, 15, 10, 0.65);
+  backdrop-filter: blur(6px);
+  animation: backdropFadeIn 0.25s ease forwards;
+}
+
+@keyframes dialogFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes backdropFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes bottomSheetSlideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+/* Hero Trust Badge with Inline Heart Icon */
+.hero-trust-badge {
+  display: inline-block;
+  line-height: 1.45;
+}
+.hero-trust-badge svg {
+  display: inline-block !important;
+  vertical-align: -2px !important;
+  margin-inline-end: 6px !important;
+}
+
+/* Responsive Styling on Mobile Screens */
+@media (max-width: 768px) {
+  .hero-trust-badge {
+    font-size: 0.77rem !important;
+    padding-inline: 12px !important;
+    padding-block: 5px !important;
+    border-radius: 16px !important;
+    line-height: 1.4 !important;
+  }
+  .hero-trust-badge svg {
+    display: inline-block !important;
+    vertical-align: -2px !important;
+    margin-inline-end: 5px !important;
+  }
+
+  /* Center Hero CTA Buttons on Mobile Screens */
+  .hero-cta-buttons {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    gap: 12px !important;
+  }
+  .hero-cta-buttons > * {
+    width: 100% !important;
+    max-width: 320px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-inline: auto !important;
+    text-align: center !important;
+  }
+
+  /* Make Dialogs Slide-Up as Bottom Sheet on Mobile */
+  dialog[closedby] {
+    margin-block-start: auto !important;
+    margin-block-end: 0 !important;
+    inline-size: 100% !important;
+    max-inline-size: 100% !important;
+    border-radius: 24px 24px 0 0 !important;
+    max-block-size: 88dvh !important;
+    animation: bottomSheetSlideUp 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+  }
+
+  .cart-drawer-container {
+    max-inline-size: 100% !important;
+    inline-size: 100% !important;
+  }
+
+  .desktop-search-form { display: none !important; }
+  .mobile-search-bar { display: block !important; }
+  .mobile-hamburger-btn { display: grid !important; }
+  .desktop-top-contact { display: none !important; }
+  .mobile-top-contact { display: flex !important; }
+
+  /* Mobile: Hide horizontal nav links row (all navigation links are inside the Hamburger menu drawer) */
+  .navbar-nav-links {
+    display: none !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .desktop-search-form { display: flex !important; }
+  .mobile-search-bar { display: none !important; }
+  .mobile-hamburger-btn { display: none !important; }
+  .mobile-menu-drawer { display: none !important; }
+  .desktop-top-contact { display: flex !important; }
+  .mobile-top-contact { display: none !important; }
+  .navbar-nav-links { display: flex !important; }
+}
+
+.topbar-link {
+  transition: color var(--transition-fast), opacity var(--transition-fast);
+}
+.topbar-link:hover {
+  color: var(--color-rose) !important;
+  text-decoration: underline !important;
+}
+
+/* Animated Top Bar Announcement Ticker for Mobile */
+@keyframes topbarTickerIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.topbar-ticker-item {
+  animation: topbarTickerIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Sticky Floating WhatsApp Button */
+.sticky-whatsapp-container {
+  position: fixed;
+  inset-inline-start: 24px;
+  inset-block-end: 24px;
+  z-index: 95;
+}
+
+.whatsapp-float-btn:hover {
+  background-color: #20BA59 !important;
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 6px 22px rgba(37, 211, 102, 0.55), 0 3px 8px rgba(0, 0, 0, 0.2) !important;
+}
+
+.whatsapp-float-btn:active {
+  transform: scale(0.95);
+}
+
+@media (max-width: 768px) {
+  .sticky-whatsapp-container {
+    inset-inline-start: 16px !important;
+    inset-block-end: 20px !important;
+  }
+  .whatsapp-float-btn {
+    padding: 10px !important;
+    border-radius: 50% !important;
+  }
+  .whatsapp-float-text {
+    display: none !important;
+  }
+}
+
+/* Modern Card Layouts */
+.card {
+  background-color: var(--color-surface-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: clip;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal), border-color var(--transition-normal);
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-border-rose);
+}
+
+/* Animations */
+@keyframes floatCake {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-6px) rotate(1deg); }
+}
+
+.floating-anim {
+  animation: floatCake 4s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(229, 115, 133, 0.4); }
+  50% { box-shadow: 0 0 0 10px rgba(229, 115, 133, 0); }
+}
+
+.pulse-glow {
+  animation: pulseGlow 2.5s infinite;
+}
+
+/* Grab handle for bottom sheet on mobile */
+.sheet-handle {
+  display: none;
+}
+@media (max-width: 768px) {
+  .sheet-handle {
+    display: block;
+    inline-size: 44px;
+    blockSize: 5px;
+    border-radius: 9999px;
+    background-color: var(--color-border);
+    margin-inline: auto;
+    margin-block: 10px 6px;
+  }
+}
+
+/* Horizontal story/category bubbles scroll container */
+.app-category-bubbles {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  padding-inline: 14px;
+  padding-block: 10px;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+.app-category-bubbles::-webkit-scrollbar {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

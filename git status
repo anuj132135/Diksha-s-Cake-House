@@ -1,0 +1,14 @@
+[1mdiff --git a/src/components/Navbar.jsx b/src/components/Navbar.jsx[m
+[1mindex b0e7184..05e31a2 100644[m
+[1m--- a/src/components/Navbar.jsx[m
+[1m+++ b/src/components/Navbar.jsx[m
+[36m@@ -579,6 +579,9 @@[m [mexport default function Navbar({[m
+           <NavLink to="/contact" style={navLinkStyle} onClick={closeMobileMenu}>[m
+             Contact Us[m
+           </NavLink>[m
+[32m+[m[32m          <NavLink to="/contact" style={navLinkStyle} onClick={closeMobileMenu}>[m
+[32m+[m[32m            DevOps[m
+[32m+[m[32m          </NavLink>[m
+         </nav>[m
+       </div>[m
+ [m
