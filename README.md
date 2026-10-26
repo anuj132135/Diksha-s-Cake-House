@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # 🎂 Diksha's Cake House — Hybrid Web & Mobile App Application
 
 An artisanal, high-performance, responsive **Hybrid Web & Mobile Application** for **Diksha's Cake House**, built with React, React Router, Vite, and Modern Web Standards.
@@ -81,6 +82,9 @@ cd "C:\Users\Anuj\.gemini\antigravity\scratch\diksha-bakery"
 npm run dev
 ```
 Open **`http://localhost:5173`** in your browser or mobile device.
+=======
+# Diksha-s-Cake-House
+>>>>>>> 55f0b1a64eb4c324e9891346d4d83409b8736990
 =======
 # Diksha-s-Cake-House
 >>>>>>> 55f0b1a64eb4c324e9891346d4d83409b8736990
