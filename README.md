@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 # 🎂 Diksha's Cake House — Hybrid Web & Mobile App Application
 
 An artisanal, high-performance, responsive **Hybrid Web & Mobile Application** for **Diksha's Cake House**, built with React, React Router, Vite, and Modern Web Standards.
